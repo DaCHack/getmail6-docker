@@ -10,6 +10,17 @@ If you simply want to use OpenVPN in a Docker container without additional bloat
 * Run this container that utilizes minimalistic, yet up-to-date software (OS and OpenVPN-package), e.g. by using Portainer and/or the Docker-Compose below
 * Use Watchtower to regularly update the base image for your container
 
+## Host setup
+Make sure you have port forwarding activated in the kernel.
+
+Allow forwarding from and to the tunnel in your firewall, e.g.:
+```
+sudo iptables -A FORWARD -s 192.168.3.0/24 -m comment --comment OpenVPN -j ACCEPT
+sudo iptables -A FORWARD -d 192.168.3.0/24 -m comment --comment OpenVPN -j ACCEPT
+sudo iptables -A FORWARD -s 192.168.178.0/24 -m comment --comment OpenVPN -j ACCEPT
+sudo iptables -A FORWARD -d 192.168.178.0/24 -m comment --comment OpenVPN -j ACCEPT
+```
+
 ## Image on Docker Hub
 https://hub.docker.com/r/dachack/openvpn
 
