@@ -20,6 +20,10 @@ sudo iptables -A FORWARD -d 192.168.3.0/24 -m comment --comment OpenVPN -j ACCEP
 sudo iptables -A FORWARD -s 192.168.178.0/24 -m comment --comment OpenVPN -j ACCEPT
 sudo iptables -A FORWARD -d 192.168.178.0/24 -m comment --comment OpenVPN -j ACCEPT
 ```
+And -if everything works as expected - install iptables-persistent to make sure these settings survive a reboot:
+```
+apt-get install iptables-persistent
+```
 
 ## Image on Docker Hub
 https://hub.docker.com/r/dachack/openvpn
