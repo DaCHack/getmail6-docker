@@ -1,6 +1,7 @@
 FROM alpine:latest
 WORKDIR /
-RUN apk update && apk upgrade && apk add --update openvpn openvpn-auth-pam bash tzdata openntpd
-EXPOSE 1194/udp
-ENV conf_file /etc/openvpn/server.conf
-ENTRYPOINT openvpn $conf_file
+ENV PYTHONUNBUFFERED=1
+RUN apk add --update --no-cache python3 py3-pip && ln -sf python3 /usr/bin/python
+RUN pip install getmail6
+ENV conf_file /getmail6.conf
+ENTRYPOINT getmail --rcfile $conf_file $GETMAIL_OPTIONS
