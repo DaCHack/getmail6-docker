@@ -1,5 +1,5 @@
 # openvpn-docker
-[![docker-hub Actions Status](https://github.com/dachack/openvpn-docker/workflows/docker-hub/badge.svg)](https://github.com/dachack/openvpn-docker/actions)
+[![docker-hub Actions Status](https://github.com/dachack/getmail6-docker/workflows/docker-hub/badge.svg)](https://github.com/dachack/getmail6-docker/actions)
 
 Run getmail6 on latest Alpine in Docker
 
