@@ -3,6 +3,6 @@
     container_name: "getmail6" # choose any name you like
     restart: unless-stopped # always restart in case of issues or system reboot
     environment:
-      - GETMAIL6_OPTIONS = "--idle --verbose"
+      - GETMAIL_OPTIONS = "--idle --verbose"
     volumes:
       - '/opt/appdata/containers/getmail6/getmail6.conf:/getmail6.conf'
